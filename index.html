@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fake News Classifier</title>
+        <link href="./classifier.css" type="text/css" rel="stylesheet">
+        <!-- <script src="haha.js"></script> -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,900;1,100;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="banner">
+            <h1>Fake or Fact?</h1>
+        </div>
+        <div class="intro">
+            <img src="fake news.jpg">
+            <p><span id="first">F</span>ake news is composed of fabricated statements which circulate online universally without any confirmation through social networking sites such as Twitter, Weibo, Facebook and more. Ever since the Coronavirus disease 2019 (COVID-19) pandemic started early 2020, there has been fake news circulating all over social networks which need identification and detection. 
+                The misinformation that has been accessible worldwide during the pandemic varied in different regions, but one has been global: anti-vaccine misinformation. The conspiracy theories, alternative untested treatments, anti-lockdown sentiments and other wide range of misleading statements on social media have increased the spread of misinformation. 
+                To help stop the circulation of Fake News on the internet, We applied certain machine learning (ML), deep learning (DL) and transformer based ML models on the data set and observed how accurately the models classified the data as well as identify the best classification model of COVID-19 fake news from tweets. </p>
+        </div>
+        <div class="input">
+            <form action="submission.html" method="POST">
+				<h1>Test your Tweet!</h1>
+                <textarea id="tweetinput" name="tweetinput" rows="12" cols="40">Copy and paste the text of your tweet here!</textarea><br>
+            </form>
+            <div class="submission">
+                <button onclick="myFunction()">Submit</button>
+            </div>
+        </div>
+        <div id="result" style="display:none">
+            <h1>Results</h1>
+            <p>Our logistic regression model predicts that your tweet is <span id="logreg">Fake</span></p>
+            <p>Our Naive Bayes model predicts that your tweet is <span id="bayes">Fake</span></p>
+            <p>Our Support Vector Machines model predicts that your tweet is <span id="SVM">Fake</span></p>
+            <p>Our Random Forest model predicts that your tweet is <span id="RandFor">Fake</span></p>
+            <p>Our K Nearest Neighbours model predicts that your tweet is <span id="KNN">Fake</span></p>
+            <p>Our Deep Neural Network predicts that your tweet is <span id="DNN">Fake</span></p>
+            <table>
+                <tr>
+                    <td>Model</td>
+                    <td>Accuracy</td>
+                    <td>Precision</td>
+                    <td>Recall</td>
+                    <td>F1 Score</td>
+                </tr>
+                <tr>
+                    <td>Multinomial NB</td>
+                    <td>Accuracy</td>
+                    <td>Precision</td>
+                    <td>Recall</td>
+                    <td>F1 Score</td>
+                </tr>
+                <tr>
+                    <td>Complement NB</td>
+                    <td>Accuracy</td>
+                    <td>Precision</td>
+                    <td>Recall</td>
+                    <td>F1 Score</td>
+                </tr>
+                <tr>
+                    <td>Logistic</td>
+                    <td>Accuracy</td>
+                    <td>Precision</td>
+                    <td>Recall</td>
+                    <td>F1 Score</td>
+                </tr>
+            </table>
+        </div>
+        
+        <script>
+            function myFunction() {
+              var x = document.getElementById("result");
+              x.style.display = "block";
+            }
+         </script>
+    </body>
+    <footer>
+        <p id="event">Undergraduate Big Data Challenge 2021 - Team 89</p>
+    </footer>
+    
+</html>

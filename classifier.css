@@ -1,0 +1,47 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1DA1F2;
+}
+
+.banner{
+    font-family: 'Arvo', serif;
+}
+body {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.button{
+    border: 3px solid white;
+}
+.intro {
+    background-color: #E1E8ED;
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+}
+.result {
+    display: none;
+}
+
+.submission {
+    padding-bottom: 10px;
+}
+
+textarea{
+    border:none;
+}
+
+
+
+#team{
+    float: right;
+}
+
+footer{
+    background-color: #657786;
+    margin-top: auto;
+    padding: 10px;
+    display: flex;
+
+}
