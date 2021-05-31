@@ -17,9 +17,9 @@ def predict():
     words = [x for x in request.form.values()]
     pred_counts = counter.transform(words)
     prediction = model.predict(pred_counts) 
-    output = lambda x: "real" if x == 0 else "fake"
-    final = output(prediction)
-    return render_template('index.html', prediction_text='Our Naive Bayes Model predicts your tweet is :{}'.format(final))
+    #output = lambda x: "Real" if x == 0 else "Fake"
+    #final = output(prediction)
+    return render_template('index.html', prediction_text=' Our Naive Bayes Model predicts your tweet is :{}'.format(prediction))
 
 if __name__ == "__main__":
     app.run(debug=True)
