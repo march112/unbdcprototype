@@ -29,7 +29,7 @@ def predict():
     final1 = output(prediction1)
     final2 = output(prediction2)
     final3 = output(prediction3)
-    return render_template('index.html', prediction_text=' Our Naive Bayes Multinomial Model predicts your tweet is {0}. Our Naive Bayes Complement Model predicts your tweet is {1}. Random Forest Model predicts your tweet is {2}.'.format(final1, final2, final3))
+    return render_template('index.html', prediction_text=' Our Naive Bayes Multinomial Model predicts your tweet is {0}. \nOur Naive Bayes Complement Model predicts your tweet is {1}. \nRandom Forest Model predicts your tweet is {2}.'.format(final1, final2, final3))
 
 if __name__ == "__main__":
     app.run(debug=True)
