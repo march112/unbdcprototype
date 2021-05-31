@@ -3,13 +3,33 @@ html {
     background-color: #1DA1F2;
 }
 
+#greenbird, #redbird{
+    max-width: 70px;
+    height:auto;
+    padding: 20px;
+}
+
+#greenbird{
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 .banner{
     font-family: 'Arvo', serif;
+    display:flex;
+    justify-content: center;
+
 }
 body {
     text-align: center;
     display: flex;
     flex-direction: column;
+}
+
+.input{
+    background-color: white;
+    width: 40%;
+    margin: auto;
+    padding-top: 50px;
 }
 .button{
     border: 3px solid white;
@@ -22,6 +42,11 @@ body {
 }
 .result {
     display: none;
+    padding: 20px;
+}
+
+#headtw, #bottw{
+    width:60%;
 }
 
 .submission {
@@ -32,10 +57,16 @@ textarea{
     border:none;
 }
 
+table, td, th{
+    border: 2px solid black;
+    background-color: lightcyan;
+}
 
-
-#team{
-    float: right;
+td{
+    padding: 10px;
+}
+table{
+    margin: auto;
 }
 
 footer{

@@ -11,7 +11,9 @@
     </head>
     <body>
         <div class="banner">
+            <img id="redbird" src="./Tweetred.png">
             <h1>Fake or Fact?</h1>
+            <img id="greenbird" src="./Tweetgreen.png">
         </div>
         <div class="intro">
             <img src="fake news.jpg">
@@ -19,11 +21,15 @@
                 The misinformation that has been accessible worldwide during the pandemic varied in different regions, but one has been global: anti-vaccine misinformation. The conspiracy theories, alternative untested treatments, anti-lockdown sentiments and other wide range of misleading statements on social media have increased the spread of misinformation. 
                 To help stop the circulation of Fake News on the internet, We applied certain machine learning (ML), deep learning (DL) and transformer based ML models on the data set and observed how accurately the models classified the data as well as identify the best classification model of COVID-19 fake news from tweets. </p>
         </div>
+        <h1 id="subtitle">Test your Tweet!</h1>
         <div class="input">
+            <img id="headtw" src="TweetHeader.png">
             <form action="submission.html" method="POST">
-				<h1>Test your Tweet!</h1>
+			
                 <textarea id="tweetinput" name="tweetinput" rows="12" cols="40">Copy and paste the text of your tweet here!</textarea><br>
             </form>
+                <img id="bottw" src="tweetbot.png">
+
             <div class="submission">
                 <button onclick="myFunction()">Submit</button>
             </div>
@@ -46,24 +52,59 @@
                 </tr>
                 <tr>
                     <td>Multinomial NB</td>
-                    <td>Accuracy</td>
-                    <td>Precision</td>
-                    <td>Recall</td>
-                    <td>F1 Score</td>
+                    <td>0.97</td>
+                    <td>0.82</td>
+                    <td>0.56</td>
+                    <td>0.68</td>
                 </tr>
                 <tr>
                     <td>Complement NB</td>
-                    <td>Accuracy</td>
-                    <td>Precision</td>
-                    <td>Recall</td>
-                    <td>F1 Score</td>
+                    <td>0.87</td>
+                    <td>0.26</td>
+                    <td>0.73</td>
+                    <td>0.38</td>
                 </tr>
                 <tr>
                     <td>Logistic</td>
-                    <td>Accuracy</td>
-                    <td>Precision</td>
-                    <td>Recall</td>
-                    <td>F1 Score</td>
+                    <td>0.97</td>
+                    <td>0.93</td>
+                    <td>0.43</td>
+                    <td>0.59</td>
+                </tr>
+                <tr>
+                    <td>KNN</td>
+                    <td>0.95</td>
+                    <td>0.52</td>
+                    <td>0.74</td>
+                    <td>0.62</td>
+                </tr>
+                <tr>
+                    <td>Kernel SVM</td>
+                    <td>0.99</td>
+                    <td>0.91</td>
+                    <td>0.80</td>
+                    <td>0.85</td>
+                </tr>
+                <tr>
+                    <td>RF</td>
+                    <td>0.99</td>
+                    <td>0.97</td>
+                    <td>0.78</td>
+                    <td>0.87</td>
+                </tr>
+                <tr>
+                    <td>DNN</td>
+                    <td>0.98</td>
+                    <td>0.93</td>
+                    <td>0.77</td>
+                    <td>0.84</td>
+                </tr>
+                <tr>
+                    <td>BERT</td>
+                    <td>0.98</td>
+                    <td>0.88</td>
+                    <td>0.77</td>
+                    <td>0.82</td>
                 </tr>
             </table>
         </div>
