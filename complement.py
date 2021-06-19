@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import ComplementNB
 import pickle
 
-df = pd.read_csv("datapreprocessed.csv")
+df = pd.read_csv("text_preprocessed.csv")
 df = df[["text", "label"]]
 #print(df.head())
 df["label"] = df["label"].map({'real': 0, 'fake':1})
