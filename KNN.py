@@ -1,32 +1,34 @@
-import pandas as pd
 import numpy as np
+from sklearn.neighbors import KNeighborsClassifier
+import pandas as pd
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import ComplementNB, MultinomialNB
 import pickle
+import nltk
+nltk.download("stopwords", quiet=True) # helps us get rid of stop words
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
 
-df = pd.read_csv("datapreprocessed.csv")
-df = df[["text", "label"]]
-#print(df.head())
-df["label"] = df["label"].map({'real': 0, 'fake':1})
-#print(df["label"].unique())
-df = df.dropna(axis=0, how='any')
-X = df["text"].tolist()
-y = df["label"].tolist()
+df = pd.read_csv("text_preprocessed.csv")
+df = df.iloc[:,1:]
+X = df.text
+y = df.label
+X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=0.25, train_size=0.75,random_state=0)
 
-x_train, x_test = train_test_split(X, test_size=0.30, random_state=1000)
-Y_train, Y_test = train_test_split(y, test_size=0.30, random_state=1000)
-vectorizer = CountVectorizer()
-vectorizer.fit (x_train)
-X_train = vectorizer.transform(x_train)
-X_test  = vectorizer.transform(x_test)
+#X_train, X_val, y_train, y_val = train_test_split(X_train,y_train, test_size=0.25, random_state=0)
+cv = CountVectorizer(stop_words=stopwords.words("english"))
+cv.fit(X_train)
+X_train = cv.transform(X_train) 
+X_test = cv.transform(X_test) 
+# feature_names = cv.get_feature_names()
 
-Y_train = np.array(Y_train)
-Y_test = np.array(Y_test)
+y_train = np.array(y_train)
+y_test = np.array(y_test)
 
 model = KNeighborsClassifier(n_neighbors=2)
-model.fit(X_train, Y_train) 
+model.fit(X_train, y_train) 
 
-pickle.dump(vectorizer, open('knncounter.pkl', 'wb'))
+pickle.dump(cv, open('counterknn.pkl', 'wb'))
 pickle.dump(model, open('modelknn.pkl','wb'))
